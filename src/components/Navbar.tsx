@@ -4,17 +4,16 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X, Heart, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Activities", href: "/activities" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "News", href: "/news" },
-  { name: "Join", href: "/join" },
-  { name: "Contact", href: "/contact" },
+  { name: "Beranda", href: "/" },
+  { name: "Tentang", href: "/about" },
+  { name: "Kegiatan", href: "/activities" },
+  { name: "Kepengurusan", href: "/management" },
+  { name: "Berita", href: "/news" },
+  { name: "Kontak", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -24,7 +23,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -33,91 +32,103 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        isScrolled ? "bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-lg py-3" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500",
+        isScrolled 
+          ? "bg-white/90 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm" 
+          : "bg-transparent py-6"
       )}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-brand p-1.5 rounded-lg group-hover:scale-110 transition-transform">
-            <Heart className="w-6 h-6 text-white fill-white" />
+      <div className="container-custom flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3.5 group">
+          <div className="bg-brand w-11 h-11 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-brand/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+            <Heart className="w-6 h-6 fill-white" />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold leading-none tracking-tight">
+            <span className="text-xl font-black leading-none tracking-tight text-slate-900 border-b-2 border-transparent group-hover:border-brand transition-all">
               KSR PMI
             </span>
-            <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
+            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mt-1">
               UNMER MALANG
             </span>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-brand relative py-1",
-                pathname === link.href ? "text-brand" : "text-foreground/80"
-              )}
-            >
-              {link.name}
-              {pathname === link.href && (
-                <motion.div
-                  layoutId="nav-underline"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand rounded-full"
-                />
-              )}
-            </Link>
-          ))}
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-10">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:text-brand relative py-1",
+                  pathname === link.href ? "text-brand" : "text-slate-500"
+                )}
+              >
+                {link.name}
+                {pathname === link.href && (
+                  <motion.div
+                    layoutId="navbar-indicator"
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-brand rounded-full"
+                  />
+                )}
+              </Link>
+            ))}
+          </div>
+          
           <Link
             href="/join"
-            className="bg-brand text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-brand-hover transition-all shadow-md hover:shadow-lg active:scale-95"
+            className="group relative px-7 py-3.5 bg-brand text-white rounded-2xl overflow-hidden shadow-xl shadow-brand/20 transition-all active:scale-95"
           >
-            Gabung Sekarang
+            <div className="absolute inset-0 bg-black/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            <span className="relative z-10 text-[11px] font-black uppercase tracking-widest flex items-center gap-2">
+              Join Us <ChevronRight className="w-4 h-4" />
+            </span>
           </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="lg:hidden w-11 h-11 flex items-center justify-center rounded-2xl bg-slate-100 text-slate-900 hover:bg-brand hover:text-white transition-colors"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white dark:bg-black border-t dark:border-white/10 p-6 md:hidden flex flex-col gap-4 shadow-2xl"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden border-t border-slate-100 bg-white overflow-hidden"
           >
-            {navLinks.map((link) => (
+            <div className="container px-6 py-8 flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "text-lg font-bold flex items-center justify-between group",
+                    pathname === link.href ? "text-brand" : "text-slate-700 hover:text-brand"
+                  )}
+                >
+                  {link.name}
+                  <ChevronRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
+                </Link>
+              ))}
               <Link
-                key={link.href}
-                href={link.href}
+                href="/join"
                 onClick={() => setIsOpen(false)}
-                className={cn(
-                  "text-lg font-medium transition-colors",
-                  pathname === link.href ? "text-brand" : "text-foreground/80"
-                )}
+                className="mt-4 bg-brand text-white py-5 rounded-3xl text-center font-black uppercase tracking-widest text-sm shadow-xl shadow-brand/20"
               >
-                {link.name}
+                Mari Bergabung
               </Link>
-            ))}
-            <Link
-              href="/join"
-              onClick={() => setIsOpen(false)}
-              className="bg-brand text-white px-5 py-3 rounded-xl text-center font-bold"
-            >
-              Gabung Sekarang
-            </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

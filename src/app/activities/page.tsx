@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { cn } from "@/lib/utils";
 
+
 const categories = ["Semua", "Bencana", "Sosial", "Kesehatan", "Pelatihan"];
 
 const activities = [
@@ -61,6 +62,8 @@ const activities = [
   },
 ];
 
+
+
 export default function ActivitiesPage() {
   const [activeCategory, setActiveCategory] = useState("Semua");
   const [searchQuery, setSearchQuery] = useState("");
@@ -73,108 +76,112 @@ export default function ActivitiesPage() {
   });
 
   return (
-    <main className="min-h-screen pt-32 pb-24">
+    <main className="min-h-screen pt-24 bg-white">
       <Navbar />
       
-      <div className="container mx-auto px-6">
+      <div className="container-custom pt-20 relative z-10">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
-          <div className="max-w-xl">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight"
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
+          <div className="max-w-2xl text-center lg:text-left">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="inline-flex px-5 py-2 rounded-full bg-brand/5 text-brand text-[10px] font-black uppercase tracking-[0.3em] mb-6"
             >
-              Kegiatan <span className="text-brand">& Aksi</span>
+              Laporan & Dokumentasi
+            </motion.div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-6xl md:text-8xl font-black text-slate-900 mb-8 leading-[0.95] tracking-tighter"
+            >
+              JEJAK <br />
+              <span className="text-brand">KEMANUSIAAN.</span>
             </motion.h1>
-            <p className="text-foreground/70 text-lg">
-              Kumpulan aksi nyata yang telah kami lakukan untuk mewujudkan 
-              masyarakat yang lebih sehat dan tanggap.
+            <p className="text-xl text-slate-500 font-medium max-w-lg leading-relaxed">
+              Catatan perjalanan pengabdian kami dalam mewujudkan 
+              masyarakat yang lebih sehat dan tanggap sejak 1989.
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/40" />
+          <div className="flex flex-col sm:flex-row gap-6 lg:mb-4">
+            <div className="relative group">
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/30 group-focus-within:text-brand transition-colors" />
               <input 
                 type="text" 
-                placeholder="Cari kegiatan..."
+                placeholder="Cari aksi nyata..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 pr-6 py-4 rounded-2xl border dark:border-white/10 bg-white dark:bg-white/5 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all w-full sm:w-64"
+                className="pl-14 pr-8 py-5 rounded-[2rem] border dark:border-white/10 bg-white dark:bg-white/5 focus:ring-4 focus:ring-brand/10 focus:border-brand/40 outline-none transition-all w-full sm:w-80 font-bold placeholder:opacity-40"
               />
-            </div>
-            <div className="flex items-center gap-2 p-1 bg-neutral-100 dark:bg-white/5 rounded-2xl overflow-x-auto no-scrollbar">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={cn(
-                    "px-5 py-3 rounded-xl text-sm font-bold whitespace-nowrap transition-all",
-                    activeCategory === cat 
-                      ? "bg-brand text-white shadow-lg shadow-brand/20" 
-                      : "text-foreground/60 hover:text-foreground hover:bg-neutral-200 dark:hover:bg-white/10"
-                  )}
-                >
-                  {cat}
-                </button>
-              ))}
             </div>
           </div>
         </div>
 
+        {/* Categories Bar */}
+        <div className="flex items-center gap-3 p-2 bg-slate-50 rounded-[2rem] mb-20 overflow-x-auto no-scrollbar border border-slate-100 w-fit mx-auto lg:mx-0">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={cn(
+                "px-8 py-4 rounded-[1.5rem] text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap transition-all",
+                activeCategory === cat 
+                  ? "bg-brand text-white shadow-xl shadow-brand/20 scale-105" 
+                  : "text-slate-400 hover:text-brand hover:bg-white"
+              )}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           <AnimatePresence mode="popLayout">
             {filteredActivities.length > 0 ? (
-              filteredActivities.map((activity) => (
+              filteredActivities.map((activity, idx) => (
                 <motion.div
                   key={activity.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
                   className="group"
                 >
-                  <div className="glass-card overflow-hidden h-full flex flex-col">
-                    <div className="relative aspect-video overflow-hidden">
+                  <div className="bg-white rounded-[3rem] overflow-hidden h-full flex flex-col border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+                    <div className="relative aspect-[4/3] overflow-hidden p-4">
                       <img 
                         src={activity.image} 
                         alt={activity.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-cover rounded-[2.5rem] transition-transform duration-1000 group-hover:scale-110"
                       />
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 rounded-full bg-brand text-white text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                      <div className="absolute top-8 left-8">
+                        <span className="px-5 py-2 rounded-xl bg-brand/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-[0.1em]">
                           {activity.category}
                         </span>
                       </div>
                     </div>
                     
-                    <div className="p-8 flex-1 flex flex-col">
-                      <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-foreground/40 mb-4">
-                        <div className="flex items-center gap-1.5">
-                          <Calendar className="w-3.5 h-3.5" />
-                          {activity.date}
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <Tag className="w-3.5 h-3.5" />
-                          {activity.category}
-                        </div>
+                    <div className="p-10 pt-4 flex-1 flex flex-col">
+                      <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">
+                        <Calendar className="w-4 h-4 text-brand" />
+                        {activity.date}
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-4 group-hover:text-brand transition-colors leading-tight">
+                      <h3 className="text-2xl font-black text-slate-900 mb-6 group-hover:text-brand transition-colors leading-tight tracking-tight">
                         {activity.title}
                       </h3>
                       
-                      <p className="text-foreground/70 text-sm leading-relaxed line-clamp-3 mb-8">
+                      <p className="text-slate-500 text-base leading-relaxed line-clamp-3 mb-10 font-medium whitespace-pre-line">
                         {activity.description}
                       </p>
                       
-                      <div className="mt-auto pt-6 border-t dark:border-white/5">
-                        <button className="flex items-center gap-2 text-sm font-bold text-brand group/btn">
-                          Baca Selengkapnya
-                          <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+                      <div className="mt-auto pt-8 border-t border-slate-50">
+                        <button className="flex items-center gap-3 text-[10px] font-black text-brand group/btn uppercase tracking-[0.3em]">
+                          Detail Kegiatan
+                          <ArrowUpRight className="w-5 h-5 transform transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
                         </button>
                       </div>
                     </div>
@@ -182,8 +189,8 @@ export default function ActivitiesPage() {
                 </motion.div>
               ))
             ) : (
-              <div className="col-span-full py-24 text-center">
-                <p className="text-xl text-foreground/40 italic">Tidak ada kegiatan yang ditemukan.</p>
+              <div className="col-span-full py-40 text-center glass rounded-[3rem] border-brand/10">
+                <p className="text-2xl font-bold text-foreground/30 italic">Belum ada jejak yang ditemukan...</p>
               </div>
             )}
           </AnimatePresence>

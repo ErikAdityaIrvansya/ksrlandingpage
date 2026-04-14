@@ -1,74 +1,63 @@
 import React from "react";
 import Link from "next/link";
-import { Heart, Mail, Phone, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
+import { Heart, Mail, Phone, MapPin, Instagram, Facebook, Youtube, ChevronRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-50 dark:bg-neutral-950 border-t dark:border-white/5 pt-16 pb-8 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Brand Info */}
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="bg-brand p-1.5 rounded-lg">
-                <Heart className="w-5 h-5 text-white fill-white" />
+    <footer className="bg-slate-900 text-white pt-24 pb-12 px-6 relative overflow-hidden">
+      {/* Visual Accents */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand to-transparent opacity-50" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand/5 blur-[150px] rounded-full translate-x-1/2 -translate-y-1/2" />
+      
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+          {/* Brand Column */}
+          <div className="space-y-10">
+            <Link href="/" className="flex items-center gap-3.5 group">
+              <div className="bg-brand w-12 h-12 rounded-2xl flex items-center justify-center shadow-2xl shadow-brand/20 group-hover:rotate-12 transition-transform duration-500">
+                <Heart className="w-7 h-7 fill-white" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold leading-none tracking-tight">
-                  KSR PMI
-                </span>
-                <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
-                  UNMER MALANG
-                </span>
+                <span className="text-2xl font-black leading-none tracking-tight">KSR PMI</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 mt-1">UNMER MALANG</span>
               </div>
             </Link>
-            <p className="text-sm text-foreground/70 leading-relaxed">
-              Organisasi kemanusiaan yang berdedikasi dalam pelayanan kesehatan, 
-              penanggulangan bencana, dan kegiatan sosial di lingkup Universitas Merdeka Malang.
+            <p className="text-slate-400 leading-relaxed font-medium text-lg">
+              Wadah pengabdian mahasiswa yang berdedikasi tinggi dalam melayani 
+              aspek kemanusiaan di Universitas Merdeka Malang sejak 1989.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="p-2 bg-white dark:bg-white/5 rounded-full shadow-sm hover:text-brand transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-2 bg-white dark:bg-white/5 rounded-full shadow-sm hover:text-brand transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-2 bg-white dark:bg-white/5 rounded-full shadow-sm hover:text-brand transition-colors">
-                <Youtube className="w-5 h-5" />
-              </a>
+            <div className="flex items-center gap-5">
+              {[Instagram, Facebook, Youtube].map((Icon, i) => (
+                <a 
+                  key={i} 
+                  href="#" 
+                  className="w-12 h-12 flex items-center justify-center bg-white/5 rounded-2xl border border-white/5 hover:bg-brand hover:border-brand transition-all hover:-translate-y-2"
+                >
+                  <Icon className="w-6 h-6" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-6">Navigasi Cepat</h4>
-            <ul className="space-y-4">
-              {["Home", "About", "Activities", "Gallery", "News", "Join", "Contact"].map((item) => (
-                <li key={item}>
-                  <Link 
-                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="text-sm text-foreground/70 hover:text-brand hover:translate-x-1 transition-all inline-block"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Activities */}
-          <div>
-            <h4 className="font-bold mb-6">Program & Layanan</h4>
-            <ul className="space-y-4">
+            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-brand mb-10">Navigasi</h4>
+            <ul className="space-y-5">
               {[
-                "Tanggap Bencana", 
-                "Bakti Sosial", 
-                "Layanan Kesehatan", 
-                "Pelatihan SSR", 
-                "Donor Darah"
-              ].map((item) => (
-                <li key={item} className="text-sm text-foreground/70">
-                  {item}
+                { name: "Beranda", href: "/" },
+                { name: "Tentang Kami", href: "/about" },
+                { name: "Kegiatan Resmi", href: "/activities" },
+                { name: "Kepengurusan", href: "/management" },
+                { name: "Pendaftaran", href: "/join" }
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href}
+                    className="text-slate-400 hover:text-white transition-colors flex items-center gap-3 group text-base font-bold"
+                  >
+                    <ChevronRight className="w-4 h-4 text-brand opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -76,31 +65,50 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold mb-6">Kontak Kami</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-sm text-foreground/70">
-                <MapPin className="w-5 h-5 text-brand shrink-0" />
-                <span>Gedung Ormawa, Universitas Merdeka Malang, Kec. Sukun, Kota Malang</span>
+            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-brand mb-10">Kontak Resmi</h4>
+            <ul className="space-y-8">
+              <li className="flex gap-5">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center shrink-0">
+                  <MapPin className="w-6 h-6 text-brand" />
+                </div>
+                <div className="space-y-1">
+                  <span className="block text-xs font-black uppercase tracking-widest text-slate-500">Sekretariat</span>
+                  <p className="text-slate-300 font-bold leading-relaxed">Gedung Ormawa Lt. 1, Universitas Merdeka Malang</p>
+                </div>
               </li>
-              <li className="flex items-center gap-3 text-sm text-foreground/70">
-                <Phone className="w-5 h-5 text-brand shrink-0" />
-                <span>+62 852 3664 2811</span>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-foreground/70">
-                <Mail className="w-5 h-5 text-brand shrink-0" />
-                <span>ksr@unmer.ac.id</span>
+              <li className="flex gap-5">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6 text-brand" />
+                </div>
+                <div className="space-y-1">
+                  <span className="block text-xs font-black uppercase tracking-widest text-slate-500">Email</span>
+                  <p className="text-slate-300 font-bold">ksr-pmi@unmer.ac.id</p>
+                </div>
               </li>
             </ul>
           </div>
+
+          {/* Badge Section */}
+          <div className="flex flex-col items-center lg:items-end justify-center">
+            <div className="p-8 bg-white/5 rounded-[3rem] border border-white/5 text-center space-y-4">
+              <div className="w-20 h-20 bg-brand rounded-3xl mx-auto flex items-center justify-center shadow-2xl shadow-brand/40">
+                <Heart className="w-10 h-10 fill-white" />
+              </div>
+              <div className="text-[10px] font-black uppercase tracking-[0.4em] text-brand">Professional Volunteers</div>
+            </div>
+          </div>
         </div>
 
-        <div className="border-t dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-foreground/50">
-            © {new Date().getFullYear()} KSR PMI Universitas Merdeka Malang. All rights reserved.
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.5em] text-slate-600">
+            © {new Date().getFullYear()} KSR PMI UNIVERSITAS MERDEKA MALANG. TERAKREDITASI.
           </p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-xs text-foreground/50 hover:text-brand">Privacy Policy</Link>
-            <Link href="#" className="text-xs text-foreground/50 hover:text-brand">Terms of Service</Link>
+          <div className="flex gap-12">
+            {["Panduan", "Kebijakan", "Status"].map(text => (
+              <Link key={text} href="#" className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600 hover:text-brand transition-colors">
+                {text}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --pmi-red: #E22129;
-  --pmi-red-hover: #C11B22;
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --card-border: rgba(255, 255, 255, 0.2);
+  --background: #F9FAFB;
+  --foreground: #1F2937;
+  --pmi-red: #D32F2F;
+  --pmi-red-hover: #B71C1C;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(0, 0, 0, 0.05);
 }
 
 @theme inline {
@@ -14,39 +14,61 @@
   --color-foreground: var(--foreground);
   --color-brand: var(--pmi-red);
   --color-brand-hover: var(--pmi-red-hover);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Force light mode style for now as per user request */
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --card-bg: rgba(20, 20, 20, 0.7);
-    --card-border: rgba(255, 255, 255, 0.1);
+    --background: #ffffff;
+    --foreground: #111827;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  @apply antialiased selection:bg-brand selection:text-white;
+  @apply antialiased overflow-x-hidden selection:bg-brand/10 selection:text-brand;
 }
 
 @layer utilities {
   .glass {
-    @apply backdrop-blur-md bg-white/70 border border-white/20 dark:bg-black/70 dark:border-white/10;
+    @apply backdrop-blur-xl bg-white/70 border border-white/40 shadow-sm;
   }
   
   .glass-card {
-    @apply glass rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02];
+    @apply backdrop-blur-2xl bg-white/80 border border-white/50 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(211,47,47,0.1)] hover:scale-[1.02] hover:border-brand/20;
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-red-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-brand via-red-600 to-red-800;
+  }
+
+  .bg-grid-subtle {
+    background-image: 
+      radial-gradient(circle at center, rgba(211, 47, 47, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-6 max-w-7xl;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-semibold tracking-tight;
+  @apply font-heading font-bold tracking-tight text-slate-900;
+}
+
+.premium-shadow {
+  shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }

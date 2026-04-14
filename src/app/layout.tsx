@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,8 +7,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
   subsets: ["latin"],
 });
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   keywords: ["KSR PMI", "UNMER Malang", "Relawan", "Kemanusiaan", "Malang", "Universitas Merdeka"],
 };
 
-import LoadingScreen from "@/components/LoadingScreen";
+
 
 export default function RootLayout({
   children,
@@ -28,11 +29,10 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
+      className={`${inter.variable} ${poppins.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans">
-        <LoadingScreen />
+      <body className="min-h-full flex flex-col font-sans selection:bg-brand selection:text-white bg-mesh">
         {children}
       </body>
     </html>
