@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --pmi-red: #E22129;
+  --pmi-red-hover: #C11B22;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 255, 255, 0.2);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--pmi-red);
+  --color-brand-hover: var(--pmi-red-hover);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card-bg: rgba(20, 20, 20, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  @apply antialiased selection:bg-brand selection:text-white;
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md bg-white/70 border border-white/20 dark:bg-black/70 dark:border-white/10;
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02];
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-red-400;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold tracking-tight;
+}
