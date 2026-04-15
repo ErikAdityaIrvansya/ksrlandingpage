@@ -90,7 +90,7 @@ export default function Home() {
               <div className="relative z-10 p-4 bg-white rounded-[4rem] shadow-2xl shadow-slate-200 border border-slate-100">
                 <div className="aspect-[4/5] overflow-hidden rounded-[3.2rem]">
                   <img
-                    src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1200"
+                    src="https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/482343501_4014804312135620_1445157315286566506_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_ohc=MCMDJ4UWX1YQ7kNvwGP6PLE&_nc_oc=Adrg6TYmEYeESJNyPd8JUDcVKTe4SOWZ-sSu-6YNOM6Q3X8uxtQpWyv-k_yvc5lI436nMdQOPLNTYdBd-BRMI9Nn&_nc_zt=23&_nc_ht=scontent.fsub8-1.fna&_nc_gid=OrLugxjyLUvUMJ8pgS7mRQ&_nc_ss=7a3a8&oh=00_Af37cUCBqlIG6-pdIAd04N6eMZaHBZyHlRZZPWUjd8X4dQ&oe=69E5121A"
                     alt="KSR PMI Activity"
                     className="w-full h-full object-cover transition-transform duration-[2s]"
                   />
@@ -134,7 +134,7 @@ export default function Home() {
           <div className="lg:w-1/2 relative">
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1559027615-cd837c92edb0?auto=format&fit=crop&q=80&w=1200" 
+                src="https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/465181581_3909865812629471_6380036382251982104_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=S1xbMQKCEpQQ7kNvwFzv-k9&_nc_oc=Adr1yfWFnyKRKA3dozfSAvpBIIrY6lQyAIeDY2OHgWFLmXTcwpcOlub_ysrVHTC9q1nyZ6pnyukYACSVzhQauqAU&_nc_zt=23&_nc_ht=scontent.fsub8-1.fna&_nc_gid=cNr5zOXxhbkNXtkL47zRSA&_nc_ss=7a3a8&oh=00_Af176FOEaoRontRLxYULVKHQT36bnqv7W1Gd6UvWCC4otA&oe=69E50501" 
                 alt="Tentang KSR PMI UNMER" 
                 className="w-full h-[500px] object-cover"
               />
@@ -216,7 +216,7 @@ export default function Home() {
             >
               <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white p-3 bg-slate-50">
                 <img 
-                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1200" 
+                  src="images/Timkes_PKKMB.jpg" 
                   alt="Relawan KSR" 
                   className="w-full h-[600px] object-cover rounded-[3.5rem]"
                 />
@@ -349,14 +349,16 @@ export default function Home() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {[
-            "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=800",
-            "https://images.unsplash.com/photo-1559027615-cd837c92edb0?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1547683908-21aa53841548?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1615461066841-6116ecaaba7f?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1576091160550-2173dad994e1?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1469571486020-0a9fd217de9a?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1509059852496-f3822ae057bf?auto=format&fit=crop&q=80&w=800",
+            "https://scontent.fsub8-2.fna.fbcdn.net/v/t39.30808-6/482236509_4014803822135669_8366396674202130140_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=7b2446&_nc_ohc=wVWJGzNc9yYQ7kNvwEoylho&_nc_oc=AdrrNZbBgkMWPrtc27iJusn35XcQa7cECGWBBbPRCxn2v5ZRWuBoTGTXZDquLde_1Vy1QgjPBSbCUP6_PvietY-q&_nc_zt=23&_nc_ht=scontent.fsub8-2.fna&_nc_gid=WWjuu3R-sg_QQuaGyOI6bg&_nc_ss=7a3a8&oh=00_Af2z9IOOZN87wNo3gNTOWY-5uF_f2eSVbD58QrZdrXy-VA&oe=69E525EF",
+            "https://scontent.fsub8-2.fna.fbcdn.net/v/t39.30808-6/483063494_4014803845469000_557925570120599809_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=IyLgw1BWOX0Q7kNvwHKldlZ&_nc_oc=AdrjIPfOW-l2_dOkgmZNSXU4eeCUCWc5cnAeQwvEQxZkAWKrsB2TikuzZ4F8flW6k5txvxYka332E7uhqT3ZmDCf&_nc_zt=23&_nc_ht=scontent.fsub8-2.fna&_nc_gid=smowR4aMQWHp-2N-f3zopw&_nc_ss=7a3a8&oh=00_Af0PL7pqu9DIRcltMPF2WpdbBHNdp1wE6oc3vf33qGH71w&oe=69E512DA",
+            "https://instagram.fsub8-1.fna.fbcdn.net/v/t51.82787-15/649195067_17902858914219913_2824847303650435440_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzM4ODg4ODI2MjQzMTg0NDY1NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4ODY0LnNkci5DMyJ9&_nc_ohc=ws5U2Cj72GUQ7kNvwHFMz7x&_nc_oc=Adow3fbWzfZ3jlmyrW1_eeT1ul04Cg9RXxZPPeZdxpQ5nW4ASIfBWHJlQGOnMf_i_JzjyGZzRF6Fm0Vs74NUFx6G&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fsub8-1.fna&_nc_gid=Ial93NrJjyYe1TNtwpqA_w&_nc_ss=7a32e&oh=00_Af0MNcV2vJr35T-7TuLO_-nmtYTwHmdBxH5UdXFxPD6YBA&oe=69E507FA",
+            "https://instagram.fsub8-2.fna.fbcdn.net/v/t51.75761-15/508679808_18397852468117232_3376911629554104198_n.webp?_nc_cat=109&ig_cache_key=MzY1NzY4MzM0OTg3NzQ4NzE3Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTA4MC5zZHIuQzMifQ%3D%3D&_nc_ohc=rejUuVck-34Q7kNvwH2Sk6z&_nc_oc=Adoa0YqvtXw1PVvLp9nOgdlvGfBBfo66V0JT4uGZ5rf8KohjCX9TNxc1U76oQbwWlt6LCx1nfD9JN7uf2EcjcZyC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fsub8-2.fna&_nc_gid=Hm5LL5CGyRlIMsQnu7xgdg&_nc_ss=7a32e&oh=00_Af32K98IBbzb66fSZfIioZpVSxxQDHyob5piq-W6VYLa1A&oe=69E50283",
+            "https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/484562360_4015547498727968_8833552859678897078_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=doyk3LFUDvEQ7kNvwFgpZdS&_nc_oc=AdqJr8DEVX0aUfcd5N4E4Z1eWdvIK4_R0qyTtvfED3B12C1ZgbOcT0D6wNJa-szPVgyqSZ5ftLXP0NG6p25ddtkq&_nc_zt=23&_nc_ht=scontent.fsub8-1.fna&_nc_gid=SYGS2AJhVVEuqjUq382Xwg&_nc_ss=7a3a8&oh=00_Af1c5DsD5Z3ERtnaf6vA0BW72wE2Fwr96_jmJ-kvGj_Xig&oe=69E526B1",
+            "https://scontent.fsub8-2.fna.fbcdn.net/v/t39.30808-6/481058323_4008773726072012_13878386228224799_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7b2446&_nc_ohc=8bywtmpK2UcQ7kNvwHh16FJ&_nc_oc=Adow1g5e2KIFuR0X_s26wkcRpbPtmKFNKV0aIPtXdTPRGKVs8fg_K9xG7YBjWqHyAFW8pk9fc_Hn-U0S207wrH_r&_nc_zt=23&_nc_ht=scontent.fsub8-2.fna&_nc_gid=GjEqNzPSeboeL5c-xDUpnQ&_nc_ss=7a3a8&oh=00_Af3amMl46OobtM96j6o0RjYIldG2fQfHXyI6_jLYwSqw3Q&oe=69E52EAA",
+            "https://instagram.fsub8-1.fna.fbcdn.net/v/t51.82787-15/660876599_18366035836201498_8636390853152047472_n.webp?stp=dst-webp_s1080x1080&_nc_cat=110&ig_cache_key=MzQ0NzMzMTI5MTk4OTgxNTQ5NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTYwLnNkci5DMyJ9&_nc_ohc=z2yyA1WDsPoQ7kNvwESCkjj&_nc_oc=AdpbXRqJ0o90hXgfGTZnDDLSnR_L0ljeyV4ujbf6pDipH2j6Pst9abgdlpddJ7NVLRoqe3ySk4_zr5ZZvoDHD6Vy&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fsub8-1.fna&_nc_gid=gVswk-Am0xnEajE3haH95A&_nc_ss=7a32e&oh=00_Af2Bj_r8SZPOcxTxYBhKld5VYgAAUlEug1P79j_gBULUzA&oe=69E50D7A",
+            "https://instagram.fsub8-2.fna.fbcdn.net/v/t51.82787-15/669744018_18141060706503196_7569052475219464367_n.webp?stp=dst-webp_s1080x1080&_nc_cat=109&ig_cache_key=MzQ1NzAyNDE5MTY1MTE5MTM2Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTY3LnNkci5DMyJ9&_nc_ohc=q2ZNueSuSqsQ7kNvwFZkK5g&_nc_oc=AdrNw0YF49iQM2kAwJuSC9px_Ap_qd882c0XLiSiDifXuAIoNMp7aVJvB7aLeg6-sSufseAUAtX9jPJArDjJ8p0M&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fsub8-2.fna&_nc_gid=gVswk-Am0xnEajE3haH95A&_nc_ss=7a32e&oh=00_Af2aL99UU5tMt4qNx3leLknjPK__mdDfyomt93_ajqIwxw&oe=69E4F48D",
+            "images/water_rescue1.jpeg",
+
           ].map((url, i) => (
             <div key={i} className={cn(
               "relative rounded-3xl overflow-hidden shadow-lg aspect-square group",

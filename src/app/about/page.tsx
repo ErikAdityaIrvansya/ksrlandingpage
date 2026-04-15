@@ -76,7 +76,7 @@ export default function AboutPage() {
           <div className="relative group">
             <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white p-3 bg-white">
               <img 
-                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1200" 
+                src="https://instagram.fsub8-1.fna.fbcdn.net/v/t51.82787-15/619564292_18136600027494191_7635591159792821151_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MjE2MjE4MzQyNjY2MzI1OTczNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4ODEwLnNkci5DMyJ9&_nc_ohc=AX4zztIck3cQ7kNvwEK8kRc&_nc_oc=AdpqJr-rC14yCEQaHImbCC80j3eF05CaGSXgl1BRbdK9jAsD7iGoY5zwR8tREDpO8GmVmkyBjqv8RrlKXmScpfeH&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fsub8-1.fna&_nc_gid=7CuQaV00BgWHjeb-V0HOgQ&_nc_ss=7a32e&oh=00_Af3zv80WSv-nR0JDlcdGdQK2mVR8UZhB-XyCsrQ3nnhlyA&oe=69E514A6" 
                 alt="Sejarah KSR PMI"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-1000"
               />
