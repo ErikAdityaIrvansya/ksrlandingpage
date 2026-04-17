@@ -109,12 +109,12 @@ export default function ActivitiesPage() {
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-black text-slate-900 mb-8 leading-[0.95] tracking-tighter"
+              className="text-4xl md:text-8xl font-black text-slate-900 mb-8 leading-[0.95] tracking-tighter"
             >
               JEJAK <br />
               <span className="text-brand">KEMANUSIAAN.</span>
             </motion.h1>
-            <p className="text-xl text-slate-500 font-medium max-w-lg leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-500 font-medium max-w-lg leading-relaxed">
               Catatan perjalanan pengabdian kami dalam mewujudkan 
               masyarakat yang lebih sehat dan tanggap sejak 1989.
             </p>

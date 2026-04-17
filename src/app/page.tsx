@@ -43,7 +43,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] tracking-tight"
+                className="text-4xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] tracking-tight"
               >
                 Mengabdi Untuk <br />
                 <span className="text-brand">Kemanusiaan.</span>
@@ -100,14 +100,14 @@ export default function Home() {
                 <motion.div 
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 4 }}
-                  className="absolute -bottom-8 -left-8 bg-white p-7 rounded-[2.5rem] shadow-2xl border border-slate-100 flex items-center gap-5"
+                  className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white p-4 md:p-7 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 flex items-center gap-3 md:gap-5"
                 >
-                  <div className="w-14 h-14 bg-brand rounded-2xl flex items-center justify-center text-white shadow-xl shadow-brand/20">
-                    <Heart className="w-7 h-7 fill-white" />
+                  <div className="w-10 h-10 md:w-14 md:h-14 bg-brand rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-xl shadow-brand/20">
+                    <Heart className="w-5 h-5 md:w-7 md:h-7 fill-white" />
                   </div>
                   <div>
-                    <div className="text-2xl font-black text-slate-900 tracking-tighter">100%</div>
-                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Kepedulian</div>
+                    <div className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter">100%</div>
+                    <div className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Kepedulian</div>
                   </div>
                 </motion.div>
               </div>
@@ -226,17 +226,17 @@ export default function Home() {
               <motion.div
                 animate={{ y: [0, -20, 0] }}
                 transition={{ repeat: Infinity, duration: 4 }}
-                className="absolute -bottom-16 -right-16 z-20 bg-white p-8 rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[280px]"
+                className="absolute -bottom-8 -right-4 md:-bottom-16 md:-right-16 z-20 bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[200px] md:max-w-[280px]"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center text-white shadow-xl shadow-brand/40">
-                    <Heart className="w-8 h-8 fill-white" />
+                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-brand flex items-center justify-center text-white shadow-xl shadow-brand/40">
+                    <Heart className="w-5 h-5 md:w-8 md:h-8 fill-white" />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl leading-tight text-slate-900">Official <br />Volunteers</h4>
+                    <h4 className="font-black text-sm md:text-xl leading-tight text-slate-900">Official <br />Volunteers</h4>
                   </div>
                 </div>
-                <p className="text-[10px] font-black text-slate-400 leading-relaxed uppercase tracking-[0.2em]">Terakreditasi Sejak 1989</p>
+                <p className="text-[8px] md:text-[10px] font-black text-slate-400 leading-relaxed uppercase tracking-[0.2em]">Terakreditasi Sejak 1989</p>
               </motion.div>
             </motion.div>
 
@@ -250,7 +250,7 @@ export default function Home() {
                 >
                   Our Core Purpose
                 </motion.span>
-                <h2 className="text-5xl md:text-7xl font-black leading-[0.95] tracking-tighter">
+                <h2 className="text-4xl md:text-7xl font-black leading-[0.95] tracking-tighter">
                   MENGABDI DENGAN <br />
                   <span className="text-brand">KETULUSAN HATI.</span>
                 </h2>
@@ -350,6 +350,7 @@ export default function Home() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {[
             "https://scontent.fsub8-2.fna.fbcdn.net/v/t39.30808-6/483063494_4014803845469000_557925570120599809_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=IyLgw1BWOX0Q7kNvwHKldlZ&_nc_oc=AdrjIPfOW-l2_dOkgmZNSXU4eeCUCWc5cnAeQwvEQxZkAWKrsB2TikuzZ4F8flW6k5txvxYka332E7uhqT3ZmDCf&_nc_zt=23&_nc_ht=scontent.fsub8-2.fna&_nc_gid=smowR4aMQWHp-2N-f3zopw&_nc_ss=7a3a8&oh=00_Af0PL7pqu9DIRcltMPF2WpdbBHNdp1wE6oc3vf33qGH71w&oe=69E512DA",
+            "https://scontent.fsub8-2.fna.fbcdn.net/v/t39.30808-6/482236509_4014803822135669_8366396674202130140_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=7b2446&_nc_ohc=wVWJGzNc9yYQ7kNvwEoylho&_nc_oc=AdrrNZbBgkMWPrtc27iJusn35XcQa7cECGWBBbPRCxn2v5ZRWuBoTGTXZDquLde_1Vy1QgjPBSbCUP6_PvietY-q&_nc_zt=23&_nc_ht=scontent.fsub8-2.fna&_nc_gid=WWjuu3R-sg_QQuaGyOI6bg&_nc_ss=7a3a8&oh=00_Af2z9IOOZN87wNo3gNTOWY-5uF_f2eSVbD58QrZdrXy-VA&oe=69E525EF",
             "https://instagram.fsub8-1.fna.fbcdn.net/v/t51.82787-15/649195067_17902858914219913_2824847303650435440_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzM4ODg4ODI2MjQzMTg0NDY1NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4ODY0LnNkci5DMyJ9&_nc_ohc=ws5U2Cj72GUQ7kNvwHFMz7x&_nc_oc=Adow3fbWzfZ3jlmyrW1_eeT1ul04Cg9RXxZPPeZdxpQ5nW4ASIfBWHJlQGOnMf_i_JzjyGZzRF6Fm0Vs74NUFx6G&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fsub8-1.fna&_nc_gid=Ial93NrJjyYe1TNtwpqA_w&_nc_ss=7a32e&oh=00_Af0MNcV2vJr35T-7TuLO_-nmtYTwHmdBxH5UdXFxPD6YBA&oe=69E507FA",
             "https://instagram.fsub8-2.fna.fbcdn.net/v/t51.75761-15/508679808_18397852468117232_3376911629554104198_n.webp?_nc_cat=109&ig_cache_key=MzY1NzY4MzM0OTg3NzQ4NzE3Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTA4MC5zZHIuQzMifQ%3D%3D&_nc_ohc=rejUuVck-34Q7kNvwH2Sk6z&_nc_oc=Adoa0YqvtXw1PVvLp9nOgdlvGfBBfo66V0JT4uGZ5rf8KohjCX9TNxc1U76oQbwWlt6LCx1nfD9JN7uf2EcjcZyC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fsub8-2.fna&_nc_gid=Hm5LL5CGyRlIMsQnu7xgdg&_nc_ss=7a32e&oh=00_Af32K98IBbzb66fSZfIioZpVSxxQDHyob5piq-W6VYLa1A&oe=69E50283",
             "https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/484562360_4015547498727968_8833552859678897078_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=doyk3LFUDvEQ7kNvwFgpZdS&_nc_oc=AdqJr8DEVX0aUfcd5N4E4Z1eWdvIK4_R0qyTtvfED3B12C1ZgbOcT0D6wNJa-szPVgyqSZ5ftLXP0NG6p25ddtkq&_nc_zt=23&_nc_ht=scontent.fsub8-1.fna&_nc_gid=SYGS2AJhVVEuqjUq382Xwg&_nc_ss=7a3a8&oh=00_Af1c5DsD5Z3ERtnaf6vA0BW72wE2Fwr96_jmJ-kvGj_Xig&oe=69E526B1",

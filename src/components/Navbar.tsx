@@ -41,11 +41,16 @@ export default function Navbar() {
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3.5 group">
-        <div className="bg-brand w-11 h-11 rounded-2xl flex items-center justify-center text-brand shadow-lg shadow-brand/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 p-1">
-         <img src="images/logoksr.png" alt="" />
+          <div className="relative bg-brand w-11 h-11 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-brand/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 overflow-hidden">
+            <Heart className="w-6 h-6 fill-white absolute group-hover:opacity-0 transition-opacity" />
+            <img 
+              src="https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/465181581_3909865812629471_6380036382251982104_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=S1xbMQKCEpQQ7kNvwFzv-k9&_nc_oc=Adr1yfWFnyKRKA3dozfSAvpBIIrY6lQyAIeDY2OHgWFLmXTcwpcOlub_ysrVHTC9q1nyZ6pnyukYACSVzhQauqAU&_nc_zt=23&_nc_ht=scontent.fsub8-1.fna&_nc_gid=cNr5zOXxhbkNXtkL47zRSA&_nc_ss=7a3a8&oh=00_Af176FOEaoRontRLxYULVKHQT36bnqv7W1Gd6UvWCC4otA&oe=69E50501" 
+              alt="KSR Logo" 
+              className="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity"
+            />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-black leading-none tracking-tight text-slate-900 border-b-2 border-transparent group-hover:border-brand transition-all">
+            <span className="text-lg md:text-xl font-black leading-none tracking-tight text-slate-900 border-b-2 border-transparent group-hover:border-brand transition-all">
               KSR PMI
             </span>
             <span className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mt-1">

@@ -48,6 +48,14 @@ export const latestActivities = [
     image: "images/Latram.jpg",
     description: "Latihan bersama SAR Gunung Hutan se-Malang Raya sebagai upaya meningkatkan kesiapsiagaan, keterampilan, dan koordinasi dalam penanganan keadaan darurat di medan pegunungan dan hutan.",
   },
+    {
+    id: 6,
+    title: "Latram SAR Gunung Hutan se-Malang Raya",
+    category: "Pelatihan Dasar",
+    date: " 2025",
+    image: "images/Latram.jpg",
+    description: "Latihan bersama SAR Gunung Hutan se-Malang Raya sebagai upaya meningkatkan kesiapsiagaan, keterampilan, dan koordinasi dalam penanganan keadaan darurat di medan pegunungan dan hutan.",
+  },
 ];
 
 export const visions = [
