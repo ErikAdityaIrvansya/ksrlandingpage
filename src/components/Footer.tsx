@@ -14,8 +14,9 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-10">
             <Link href="/" className="flex items-center gap-3.5 group">
-              <div className="bg-brand w-12 h-12 rounded-2xl flex items-center justify-center shadow-2xl shadow-brand/20 group-hover:rotate-12 transition-transform duration-500">
-                <Heart className="w-7 h-7 fill-white" />
+              <div className="bg-brand w-11 h-11 rounded-2xl flex items-center justify-center text-brand shadow-lg shadow-brand/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 p-1">
+               <img src="images/logoksr.png" alt="" />
+
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black leading-none tracking-tight">KSR PMI</span>
@@ -91,8 +92,8 @@ export default function Footer() {
           {/* Badge Section */}
           <div className="flex flex-col items-center lg:items-end justify-center">
             <div className="p-8 bg-white/5 rounded-[3rem] border border-white/5 text-center space-y-4">
-              <div className="w-20 h-20 bg-brand rounded-3xl mx-auto flex items-center justify-center shadow-2xl shadow-brand/40">
-                <Heart className="w-10 h-10 fill-white" />
+            <div className="bg-brand rounded-3xl mx-auto flex items-center justify-center shadow-2xl shadow-brand/40 p-5">
+            <img src="images/logoksr.png" alt="" />
               </div>
               <div className="text-[10px] font-black uppercase tracking-[0.4em] text-brand">Professional Volunteers</div>
             </div>
